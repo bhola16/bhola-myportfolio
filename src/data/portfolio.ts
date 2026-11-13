@@ -118,7 +118,8 @@ export const publications = [
 ];
 
 
-export const projects: Project = [
+
+export const projects: Project[] = [
   {
     slug: "together-we-can",
     title: "TogetherWeCan",
@@ -167,7 +168,6 @@ export const projects: Project = [
       "Add analytics for community participation.",
     ],
   },
-
   {
     slug: "bazar-dor",
     title: "BazarDor (বাজার দর)",
@@ -217,7 +217,6 @@ export const projects: Project = [
       "Introduce personalized shopping and price alerts.",
     ],
   },
-
   {
     slug: "wanderlast",
     title: "Wanderlast",
@@ -237,12 +236,11 @@ export const projects: Project = [
       "https://github.com/bhola16/Wanderlast/tree/wanderlastServer",
 
     features: [],
-
     challenges: [],
-
     futureImprovements: [],
   },
 ];
+
 
 export const contactInfo = {
   email: personalInfo.email,
