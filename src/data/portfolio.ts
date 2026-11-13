@@ -1,16 +1,18 @@
+import type { Project } from "@/types/portfolio";
+
 export const personalInfo = {
   name: "Bholanath Bala",
   designation: "AI Engineer | Machine Learning Researcher | Software Developer",
   location: "Bangladesh",
-  email: "YOUR_EMAIL@example.com",
-  phone: "YOUR_PHONE_NUMBER",
-  profileImage: "/profile/profile.jpg",
-  resume: "/resume/resume.pdf",
+  email: "ku.bhola16@gmail.com",
+  phone: "+8801934392790",
+  profileImage: "/profile/bholanath_bala.jpg",
+  resume: "/resume/Bholanath_Bala_CV.pdf",
 
   socialLinks: {
     github: "https://github.com/bhola16",
-    linkedin: "YOUR_LINKEDIN_URL",
-    facebook: "YOUR_FACEBOOK_URL",
+    linkedin: "https://www.linkedin.com/in/bholanath-bala16",
+    facebook: "https://www.facebook.com/bhola.nath.bala.2024",
   },
 };
 
@@ -35,7 +37,21 @@ export const education = [
     location: "Khulna, Bangladesh",
     duration: "February 2022 – January 2026",
     result: "CGPA: 3.57 / 4.00",
-    credits: "160 Credits",
+  },
+];
+
+export const institutionLinks = [
+  {
+    name: "Khulna University",
+    subtitle: "Official University Website",
+    logo: "/education/ku_logo.png",
+    url: "https://ku.ac.bd/",
+  },
+  {
+    name: "ECE Discipline",
+    subtitle: "Electronics & Communication Engineering",
+    logo: "/education/ece-logo.png",
+    url: "https://ku.ac.bd/discipline/ece",
   },
 ];
 
@@ -64,6 +80,7 @@ export const skills = [
       "Node.js",
       "Express.js",
       "MongoDB",
+      "Better Auth",
     ],
   },
   {
@@ -71,6 +88,7 @@ export const skills = [
     items: ["Git", "GitHub", "Google Colab", "VS Code", "LaTeX"],
   },
 ];
+
 
 export const publications = [
   {
@@ -80,6 +98,10 @@ export const publications = [
     year: 2025,
     doi: "10.1109/ICCIT68739.2025.11490241",
     link: "https://doi.org/10.1109/ICCIT68739.2025.11490241",
+    image: "/education/bearing-fault.jpg",
+    description:
+      "A Vision Transformer-based approach for classifying bearing faults using vibration signal spectrograms.",
+    category: "Bearing Fault Diagnosis",
   },
   {
     title:
@@ -88,128 +110,15 @@ export const publications = [
     year: 2026,
     doi: "10.1109/PECCII70991.2026.11661820",
     link: "https://doi.org/10.1109/PECCII70991.2026.11661820",
+    image: "/education/gi-disease.jpeg",
+    description:
+      "An attention-enhanced hybrid deep learning approach for gastrointestinal disease classification using endoscopic images.",
+    category: "GI Disease Classification",
   },
 ];
 
-// export const projects = [
-//   {
-//     slug: "bearing-fault-diagnosis",
-//     title: "Bearing Fault Diagnosis Using Transformers",
-//     category: "AI / Deep Learning",
-//     image: "/projects/bearing-fault.jpg",
-//     shortDescription:
-//       "A comparative study of Vision Transformer and PatchTST for bearing fault diagnosis using vibration signals.",
-//     description:
-//       "A comparative investigation of two independent transformer-based approaches using the PU and CWRU bearing datasets.",
-//     technologies: [
-//       "Python",
-//       "PyTorch",
-//       "Vision Transformer",
-//       "PatchTST",
-//       "STFT",
-//       "Signal Processing",
-//     ],
-//     liveLink: "",
-//     githubLink: "",
-//     challenges: [
-//       "Vibration signal preprocessing",
-//       "Time-frequency representation",
-//       "Transformer model training",
-//     ],
-//     futureImprovements: [
-//       "Explore lightweight transformer architectures",
-//       "Improve generalization across operating conditions",
-//       "Investigate explainable AI",
-//     ],
-//   },
 
-//   {
-//     slug: "gi-disease-classification",
-//     title: "GI Disease Classification",
-//     category: "Computer Vision / Deep Learning",
-//     image: "/projects/gi-disease.jpg",
-//     shortDescription:
-//       "An attention-enhanced hybrid deep learning model for gastrointestinal disease classification.",
-//     description:
-//       "A hybrid model combining ConvNeXt Base, EfficientNetV2-Small, and dual SE attention using the Kvasir v2 dataset.",
-//     technologies: [
-//       "Python",
-//       "PyTorch",
-//       "ConvNeXt",
-//       "EfficientNetV2",
-//       "Computer Vision",
-//     ],
-//     liveLink: "",
-//     githubLink: "",
-//     challenges: [
-//       "Feature extraction",
-//       "Attention mechanism design",
-//       "Multiclass classification",
-//     ],
-//     futureImprovements: [
-//       "Evaluate on additional datasets",
-//       "Explore model compression",
-//       "Improve interpretability",
-//     ],
-//   },
-
-//   {
-//     slug: "iot-environmental-monitoring",
-//     title: "IoT Environmental Monitoring",
-//     category: "IoT / Intelligent Sensing",
-//     image: "/projects/iot-monitoring.jpg",
-//     shortDescription:
-//       "An IoT-based environmental monitoring project focused on Sundari trees in the Sundarbans.",
-//     description:
-//       "An environmental monitoring project using IoT-based sensing and data analysis.",
-//     technologies: ["IoT", "Environmental Sensors", "Python", "Data Analysis"],
-//     liveLink: "",
-//     githubLink: "",
-//     challenges: [
-//       "Environmental data collection",
-//       "Sensor integration",
-//       "Data monitoring",
-//     ],
-//     futureImprovements: [
-//       "Expand sensor coverage",
-//       "Introduce predictive analysis",
-//     ],
-//   },
-
-//   {
-//     slug: "full-stack-web-application",
-//     title: "Full-Stack Web Application",
-//     category: "Software Development",
-//     image: "/projects/web-application.jpg",
-//     shortDescription:
-//       "A modern web application developed using Next.js, TypeScript, Express.js, and MongoDB.",
-//     description:
-//       "A full-stack application demonstrating frontend development, backend API integration, and database operations.",
-//     technologies: [
-//       "Next.js",
-//       "TypeScript",
-//       "Tailwind CSS",
-//       "Express.js",
-//       "MongoDB",
-//     ],
-//     liveLink: "",
-//     githubLink: "",
-//     challenges: [
-//       "Frontend and backend integration",
-//       "API development",
-//       "Database management",
-//     ],
-//     futureImprovements: [
-//       "Enhance authentication",
-//       "Improve performance",
-//       "Add advanced features",
-//     ],
-//   },
-// ];
-
-
-
-export const projects = [
+export const projects: Project = [
   {
     slug: "together-we-can",
     title: "TogetherWeCan",
@@ -235,7 +144,7 @@ export const projects = [
 
     liveLink: "https://togetherwecan-client.vercel.app",
     githubLink: "https://github.com/bhola16/togetherWeCan-Client",
-    serverGithubLink: "",
+    serverGithubLink: "https://github.com/bhola16/togetherWeCan-Server",
 
     features: [
       "Explore upcoming and past community events",
@@ -322,9 +231,10 @@ export const projects = [
 
     technologies: ["Next.js", "React", "TypeScript"],
 
-    liveLink: "",
+    liveLink: "https://wanderlast-frontend.vercel.app",
     githubLink: "https://github.com/bhola16/Wanderlast",
-    serverGithubLink: "",
+    serverGithubLink:
+      "https://github.com/bhola16/Wanderlast/tree/wanderlastServer",
 
     features: [],
 
@@ -333,7 +243,6 @@ export const projects = [
     futureImprovements: [],
   },
 ];
-
 
 export const contactInfo = {
   email: personalInfo.email,
