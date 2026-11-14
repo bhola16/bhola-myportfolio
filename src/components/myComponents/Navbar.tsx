@@ -11,6 +11,7 @@ import {
   useSyncExternalStore,
   type MouseEvent,
 } from "react";
+
 import { Button } from "../ui/button";
 
 const navLinks = [
@@ -38,7 +39,7 @@ export default function Navbar() {
 
   const { theme, setTheme } = useTheme();
 
-  // Avoid theme hydration mismatch without setting state in an effect.
+  // Avoid theme hydration mismatch.
   const mounted = useSyncExternalStore(
     () => () => {},
     () => true,
@@ -46,15 +47,12 @@ export default function Navbar() {
   );
 
   // Smooth navigation to page sections.
-
   const handleNavigation = (
     event: MouseEvent<HTMLAnchorElement>,
     sectionId: string,
   ) => {
     setIsOpen(false);
-    setActiveSection(sectionId);
 
-    // Allow normal navigation from other pages.
     if (pathname !== "/") return;
 
     const section = document.getElementById(sectionId);
@@ -63,10 +61,10 @@ export default function Navbar() {
 
     event.preventDefault();
 
-    // Update the URL without reloading.
+    setActiveSection(sectionId);
+
     window.history.pushState(null, "", `/#${sectionId}`);
 
-    // Wait for the browser to update the layout.
     requestAnimationFrame(() => {
       const offset = getScrollOffset();
 
@@ -101,15 +99,19 @@ export default function Navbar() {
 
       setActiveSection(currentSection);
     };
+
     const animationFrame = requestAnimationFrame(handleScroll);
 
     window.addEventListener("scroll", handleScroll, {
       passive: true,
     });
 
+    window.addEventListener("resize", handleScroll);
+
     return () => {
       cancelAnimationFrame(animationFrame);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -137,49 +139,52 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  // Close mobile menu when navigating to another route.
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-2 sm:px-6 sm:pt-2">
-      <nav
-        className="mx-auto flex max-w-7xl items-center justify-between gap-2 rounded-2xl border border-slate-200/70 bg-white/85 px-3 py-3 shadow-sm shadow-slate-900/5 backdrop-blur-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/5 dark:border-slate-800/70 dark:bg-slate-950/85 dark:shadow-black/10 dark:hover:shadow-blue-500/5 sm:px-5 lg:px-6"
-        aria-label="Main navigation">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-2 sm:px-5 lg:px-8">
+      <nav className="mx-auto flex w-full min-w-0 max-w-7xl items-center justify-between gap-2 overflow-hidden rounded-2xl border border-slate-200/70 bg-white/90 px-3 py-2.5 shadow-sm shadow-slate-900/5 backdrop-blur-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/5 dark:border-slate-800/70 dark:bg-slate-950/90 dark:shadow-black/10 dark:hover:shadow-blue-500/5 sm:gap-3 sm:px-4 sm:py-3 lg:px-5 2xl:px-6">
         {/* Logo */}
         <Link
           href="/#home"
           onClick={(event) => handleNavigation(event, "home")}
-          className="group flex shrink-0 items-center gap-2.5 rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4 dark:focus-visible:ring-offset-slate-950"
+          className="group flex min-w-0 shrink-0 items-center gap-2 rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4 dark:focus-visible:ring-offset-slate-950 sm:gap-2.5"
           aria-label="Bholanath Bala - Home">
-          <span className="relative">
+          <span className="relative shrink-0">
             <Image
               src="/profile/bholanath_bala.jpg"
               alt="Bholanath Bala"
               width={42}
               height={42}
               priority
-              className="h-10 w-10 rounded-full object-cover ring-2 ring-blue-500/20 transition-all duration-500 group-hover:scale-105 group-hover:rounded-full group-hover:ring-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/25"
+              className="h-9 w-9 rounded-full object-cover ring-2 ring-blue-500/20 transition-all duration-500 group-hover:scale-105 group-hover:ring-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/25 sm:h-10 sm:w-10"
             />
 
             <span className="absolute -bottom-1 -right-1 h-3 w-3 rounded-full border-2 border-white bg-emerald-500 dark:border-slate-950" />
           </span>
 
-          <span className="hidden whitespace-nowrap text-base font-bold tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400 sm:block">
+          <span className="hidden whitespace-nowrap text-sm font-bold tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400 sm:block lg:text-base">
             Bholanath Bala
             <span className="ml-1 text-blue-600 dark:text-blue-400">.</span>
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-0.5 xl:flex">
+        <div className="hidden min-w-0 items-center justify-center gap-0.5 2xl:flex">
           {navLinks.map((link) => (
             <Link
               key={link.id}
               href={link.href}
               onClick={(event) => handleNavigation(event, link.id)}
               aria-current={activeSection === link.id ? "location" : undefined}
-              className={`group relative whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium outline-none transition-all duration-300 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-blue-500 2xl:px-3 ${
+              className={`group relative whitespace-nowrap rounded-lg px-2 py-2 text-xs font-medium outline-none transition-all duration-300 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-blue-500 2xl:px-2.5 2xl:text-sm ${
                 activeSection === link.id
                   ? "bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400"
                   : "text-slate-600 hover:bg-slate-100 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400"
@@ -187,7 +192,7 @@ export default function Navbar() {
               {link.name}
 
               <span
-                className={`absolute bottom-1 left-3 right-3 h-0.5 origin-left rounded-full bg-blue-600 transition-transform duration-300 dark:bg-blue-400 ${
+                className={`absolute bottom-1 left-2.5 right-2.5 h-0.5 origin-left rounded-full bg-blue-600 transition-transform duration-300 dark:bg-blue-400 ${
                   activeSection === link.id
                     ? "scale-x-100"
                     : "scale-x-0 group-hover:scale-x-100"
@@ -198,7 +203,7 @@ export default function Navbar() {
         </div>
 
         {/* Right Side Actions */}
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-2.5">
           {/* Theme Toggle */}
           <button
             type="button"
@@ -211,7 +216,7 @@ export default function Navbar() {
                   ? "Switch to light theme"
                   : "Switch to dark theme"
             }
-            className="group flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-600 outline-none transition-all duration-300 hover:rotate-6 hover:scale-110 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600 hover:shadow-md hover:shadow-blue-500/10 focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-50 dark:border-slate-700 dark:text-slate-300 dark:hover:border-blue-500/50 dark:hover:bg-blue-500/10 dark:hover:text-blue-400">
+            className="group flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-600 outline-none transition-all duration-300 hover:rotate-6 hover:scale-110 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600 hover:shadow-md hover:shadow-blue-500/10 focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-50 dark:border-slate-700 dark:text-slate-300 dark:hover:border-blue-500/50 dark:hover:bg-blue-500/10 dark:hover:text-blue-400 sm:h-10 sm:w-10">
             {!mounted ? (
               <span className="h-5 w-5" />
             ) : theme === "dark" ? (
@@ -222,7 +227,7 @@ export default function Navbar() {
             ) : (
               <Moon
                 size={19}
-                className="transition-transform duration-500 group-hover:rotate-20"
+                className="transition-transform duration-500 group-hover:-rotate-12"
               />
             )}
           </button>
@@ -231,7 +236,7 @@ export default function Navbar() {
           <Link
             href="/#contact"
             onClick={(event) => handleNavigation(event, "contact")}
-            className="group hidden items-center gap-2 whitespace-nowrap rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-600/20 outline-none transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 xl:flex">
+            className="group hidden items-center gap-2 whitespace-nowrap rounded-xl bg-blue-600 px-3 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-600/20 outline-none transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 2xl:flex 2xl:px-4">
             <span>Let&apos;s Talk</span>
 
             <ArrowUpRight
@@ -247,7 +252,7 @@ export default function Navbar() {
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-100 text-slate-700 outline-none transition-all duration-300 hover:rotate-3 hover:scale-105 hover:border-blue-300 hover:bg-blue-100 hover:text-blue-600 focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-blue-500/50 dark:hover:bg-blue-500/20 dark:hover:text-blue-400 xl:hidden">
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-100 p-0 text-slate-700 outline-none transition-all duration-300 hover:rotate-3 hover:scale-105 hover:border-blue-300 hover:bg-blue-100 hover:text-blue-600 focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-blue-500/50 dark:hover:bg-blue-500/20 dark:hover:text-blue-400 sm:h-10 sm:w-10 2xl:hidden">
             {isOpen ? <X size={21} /> : <Menu size={21} />}
           </Button>
         </div>
@@ -257,7 +262,7 @@ export default function Navbar() {
       <div
         id="mobile-navigation"
         aria-hidden={!isOpen}
-        className={`absolute inset-x-3 top-[calc(100%+0.5rem)] mx-auto max-h-[calc(100dvh-6rem)] max-w-7xl overflow-y-auto overscroll-contain rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-900/10 transition-all duration-300 dark:border-slate-800 dark:bg-slate-950 dark:shadow-black/20 sm:inset-x-6 xl:hidden ${
+        className={`absolute inset-x-3 top-[calc(100%+0.5rem)] mx-auto w-auto max-w-7xl max-h-[calc(100dvh-6rem)] overflow-x-hidden overflow-y-auto overscroll-contain rounded-2xl border border-slate-200 bg-white shadow-xl transition-all duration-300 dark:border-slate-800 dark:bg-slate-950 sm:inset-x-5 lg:inset-x-8 2xl:hidden ${
           isOpen
             ? "visible translate-y-0 scale-100 opacity-100"
             : "invisible -translate-y-3 scale-[0.98] opacity-0"

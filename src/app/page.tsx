@@ -3,7 +3,6 @@ import Contact from "@/components/myComponents/Contact";
 import Education from "@/components/myComponents/Education";
 import Footer from "@/components/myComponents/Footer";
 import Hero from "@/components/myComponents/Hero";
-import Navbar from "@/components/myComponents/Navbar";
 import Projects from "@/components/myComponents/Projects";
 import Publications from "@/components/myComponents/Publications";
 import Skills from "@/components/myComponents/Skills";
@@ -11,7 +10,6 @@ import Skills from "@/components/myComponents/Skills";
 export default function Home() {
   return (
     <div>
-      <Navbar />
       <main>
         <Hero />
         <About/>

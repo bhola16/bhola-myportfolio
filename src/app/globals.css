@@ -6,7 +6,13 @@
 
 html {
   scroll-behavior: smooth;
-  /* scroll-padding-top: 10px; */
+
+}
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {

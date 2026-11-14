@@ -89,7 +89,6 @@ export const skills = [
   },
 ];
 
-
 export const publications = [
   {
     title:
@@ -117,127 +116,73 @@ export const publications = [
   },
 ];
 
-
-
 export const projects: Project[] = [
   {
     slug: "together-we-can",
     title: "TogetherWeCan",
     category: "Full-Stack Web Development",
-    image: "",
-
-    shortDescription:
-      "A community-driven volunteering platform that connects people through social development initiatives and community events.",
-
-    description:
-      "TogetherWeCan is a responsive community platform where users can discover upcoming and past volunteering events, organize their own activities, join community initiatives, and manage their participation. It supports activities such as tree plantation, community cleanup, blood donation, and food distribution.",
-
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Express.js",
-      "MongoDB",
-      "Better Auth",
-    ],
-
-    liveLink: "https://togetherwecan-client.vercel.app",
-    githubLink: "https://github.com/bhola16/togetherWeCan-Client",
-
-    features: [
-      "Explore upcoming and past community events",
-      "Create, edit, and manage events",
-      "Join and leave community activities",
-      "Track joined events and personal activities",
-      "Email/password, Google, and GitHub authentication",
-      "Responsive interface with dark and light themes",
-    ],
 
     challenges: [
-      "Integrating the Next.js frontend with an Express.js REST API.",
-      "Managing authenticated requests and user sessions.",
-      "Implementing event creation, participation, and management workflows.",
+      "Designing a consistent experience across the frontend and backend",
+      "Connecting the frontend with REST API endpoints",
+      "Managing event information and database operations",
+      "Building a responsive interface with reusable components",
     ],
-
     futureImprovements: [
-      "Introduce real-time event notifications.",
-      "Improve event discovery with advanced filtering.",
-      "Add analytics for community participation.",
+      "Introduce user authentication and role-based access control",
+      "Add volunteer registration and participation tracking",
+      "Implement event search, filtering, and category-based discovery",
+      "Add an event management dashboard with analytics",
+      "Integrate email notifications for important event updates",
     ],
+    liveLink: "https://togetherwecan-client.vercel.app",
+    githubLink: "https://github.com/bhola16/togetherWeCan-Client",
   },
+
   {
     slug: "bazar-dor",
     title: "BazarDor (বাজার দর)",
     category: "Full-Stack Web Development",
-    image: "",
-
-    shortDescription:
-      "A market-price information platform that helps users explore daily commodity prices and compare prices across markets in Bangladesh.",
-
-    description:
-      "BazarDor is a responsive market-price information application designed to make everyday market information easier to access. Users can browse products by category, explore price movements, compare available market prices, and view detailed product information. The application also includes user authentication and profile functionality.",
-
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "DaisyUI",
-      "Better Auth",
-      "MongoDB",
-      "Mongoose",
-      "REST API",
-    ],
-
-    liveLink: "https://bazar-dor-kohl.vercel.app",
-    githubLink: "https://github.com/bhola16/bazar-dor",
-    
-
-    features: [
-      "Browse products and categories",
-      "Track product price increases and decreases",
-      "Compare available prices across markets",
-      "Sort products by price",
-      "User registration and social authentication",
-      "Responsive interface with loading states",
-    ],
 
     challenges: [
-      "Integrating product and category information from a REST API.",
-      "Managing authentication with Better Auth and MongoDB.",
-      "Presenting market-price information in an accessible format.",
+      "Organizing commodity and market information for easy navigation",
+      "Presenting price information in a clear and understandable format",
+      "Managing data communication between the frontend and backend",
+      "Designing a responsive interface for different devices",
     ],
-
     futureImprovements: [
-      "Add more historical price visualizations.",
-      "Improve market-wise price comparison.",
-      "Introduce personalized shopping and price alerts.",
+      "Introduce historical price trends and interactive charts",
+      "Add advanced filtering by product, category, and market",
+      "Provide price-change notifications for selected commodities",
+      "Expand market coverage across more regions of Bangladesh",
+      "Develop a community-based price reporting feature",
     ],
+    liveLink: "https://bazar-dor-kohl.vercel.app",
+    githubLink: "https://github.com/bhola16/bazar-dor",
   },
+
   {
-    slug: "wanderlast",
-    title: "Wanderlast",
+    slug: "fitlog",
+    title: "FitLog",
     category: "Web Development",
-    image: "",
 
-    shortDescription: "A web development project built with Next.js.",
-
-    description:
-      "Wanderlast is a web application project. Its detailed functionality, main features, and development objectives will be added after confirming the project requirements and implementation.",
-
-    technologies: ["Next.js", "React", "TypeScript"],
-
-    liveLink: "https://wanderlast-frontend.vercel.app",
-    githubLink: "https://github.com/bhola16/Wanderlast",
-    
-    features: [],
-    challenges: [],
-    futureImprovements: [],
+    challenges: [
+      "Structuring a maintainable application using Next.js and React",
+      "Designing an intuitive interface for fitness-related information",
+      "Ensuring consistent layouts across different screen sizes",
+      "Organizing reusable components and application styles",
+    ],
+    futureImprovements: [
+      "Introduce personalized workout planning and activity tracking",
+      "Add user accounts and personal fitness profiles",
+      "Implement progress tracking with visual charts and statistics",
+      "Include fitness goals and daily activity summaries",
+      "Add data persistence for long-term fitness history",
+    ],
+    liveLink: "https://fitlogbhola.vercel.app/",
+    githubLink: "https://github.com/bhola16/FitLog-Bhola",
   },
 ];
-
 
 export const contactInfo = {
   email: personalInfo.email,
