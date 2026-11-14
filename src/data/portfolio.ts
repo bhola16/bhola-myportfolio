@@ -145,7 +145,6 @@ export const projects: Project[] = [
 
     liveLink: "https://togetherwecan-client.vercel.app",
     githubLink: "https://github.com/bhola16/togetherWeCan-Client",
-    serverGithubLink: "https://github.com/bhola16/togetherWeCan-Server",
 
     features: [
       "Explore upcoming and past community events",
@@ -194,7 +193,7 @@ export const projects: Project[] = [
 
     liveLink: "https://bazar-dor-kohl.vercel.app",
     githubLink: "https://github.com/bhola16/bazar-dor",
-    serverGithubLink: "",
+    
 
     features: [
       "Browse products and categories",
@@ -232,9 +231,7 @@ export const projects: Project[] = [
 
     liveLink: "https://wanderlast-frontend.vercel.app",
     githubLink: "https://github.com/bhola16/Wanderlast",
-    serverGithubLink:
-      "https://github.com/bhola16/Wanderlast/tree/wanderlastServer",
-
+    
     features: [],
     challenges: [],
     futureImprovements: [],
