@@ -62,7 +62,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate flex min-h-screen scroll-mt-24 items-center overflow-hidden bg-slate-50 px-4 pb-20 pt-32 transition-colors duration-500 dark:bg-[#080d19] sm:px-6 lg:px-8">
+      className="relative isolate flex min-h-screen items-center overflow-hidden bg-slate-50 px-4 pb-10 pt-32 transition-colors duration-500 dark:bg-[#080d19] sm:px-6 lg:px-8">
       {/* Background Decorations */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-blue-400/10 blur-[120px] dark:bg-blue-500/10" />

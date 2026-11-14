@@ -3,7 +3,7 @@ import type { Project } from "@/types/portfolio";
 export const personalInfo = {
   name: "Bholanath Bala",
   designation: "AI Engineer | Machine Learning Researcher | Software Developer",
-  location: "Bangladesh",
+  location: "Khulna, Bangladesh",
   email: "ku.bhola16@gmail.com",
   phone: "+8801934392790",
   profileImage: "/profile/bholanath_bala.jpg",
@@ -50,7 +50,7 @@ export const institutionLinks = [
   {
     name: "ECE Discipline",
     subtitle: "Electronics & Communication Engineering",
-    logo: "/education/ece-logo.png",
+    logo: "/education/ECE.jpeg",
     url: "https://ku.ac.bd/discipline/ece",
   },
 ];
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     slug: "together-we-can",
     title: "TogetherWeCan",
     category: "Full-Stack Web Development",
-    image: "/projects/together-we-can.png",
+    image: "",
 
     shortDescription:
       "A community-driven volunteering platform that connects people through social development initiatives and community events.",
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     slug: "bazar-dor",
     title: "BazarDor (বাজার দর)",
     category: "Full-Stack Web Development",
-    image: "/projects/bazar-dor.png",
+    image: "",
 
     shortDescription:
       "A market-price information platform that helps users explore daily commodity prices and compare prices across markets in Bangladesh.",
@@ -221,7 +221,7 @@ export const projects: Project[] = [
     slug: "wanderlast",
     title: "Wanderlast",
     category: "Web Development",
-    image: "/projects/wanderlast.png",
+    image: "",
 
     shortDescription: "A web development project built with Next.js.",
 

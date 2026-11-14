@@ -44,7 +44,7 @@ export default function Publications() {
   return (
     <section
       id="publications"
-      className="relative overflow-hidden bg-slate-50 px-5 py-24 dark:bg-[#0b1220] sm:px-8 lg:px-12">
+      className="relative isolate overflow-hidden bg-slate-50 px-5 py-2 pb-10 dark:bg-[#0b1220] sm:px-8 lg:px-12">
       {/* Background decoration */}
       <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-blue-500/10 blur-[100px]" />
       <div className="pointer-events-none absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-purple-500/10 blur-[100px]" />

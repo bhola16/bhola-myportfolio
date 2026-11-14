@@ -82,7 +82,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative isolate scroll-mt-24 overflow-hidden bg-slate-50 px-4 py-16 transition-colors duration-500 dark:bg-[#0b1220] sm:px-6 lg:px-8">
+      className="relative isolate overflow-hidden bg-slate-50 pb-10 px-4 py-2 transition-colors duration-500 dark:bg-[#0b1220] sm:px-6 lg:px-8">
       {/* Animated background accents */}
       <motion.div
         animate={{

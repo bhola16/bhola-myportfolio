@@ -79,7 +79,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative isolate scroll-mt-24 overflow-hidden bg-white px-4 py-16 transition-colors duration-500 dark:bg-[#0b1220] sm:px-6 lg:px-8">
+      className="relative isolate overflow-hidden bg-white px-4 py-2 pb-10 transition-colors duration-500 dark:bg-[#0b1220] sm:px-6 lg:px-8">
       {/* Background decoration */}
       <motion.div
         animate={{ x: [0, 30, 0], y: [0, -20, 0] }}

@@ -23,7 +23,12 @@ const navLinks = [
   { name: "Contact", href: "/#contact", id: "contact" },
 ];
 
-const NAVBAR_OFFSET = 120;
+const getScrollOffset = () => {
+  const navbar = document.querySelector("header");
+  const navbarHeight = navbar?.getBoundingClientRect().height ?? 80;
+
+  return navbarHeight + 12;
+};
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -41,6 +46,7 @@ export default function Navbar() {
   );
 
   // Smooth navigation to page sections.
+
   const handleNavigation = (
     event: MouseEvent<HTMLAnchorElement>,
     sectionId: string,
@@ -48,7 +54,7 @@ export default function Navbar() {
     setIsOpen(false);
     setActiveSection(sectionId);
 
-    // Allow normal Next.js navigation from other pages.
+    // Allow normal navigation from other pages.
     if (pathname !== "/") return;
 
     const section = document.getElementById(sectionId);
@@ -57,51 +63,44 @@ export default function Navbar() {
 
     event.preventDefault();
 
-    // Update the URL without reloading the page.
+    // Update the URL without reloading.
     window.history.pushState(null, "", `/#${sectionId}`);
 
-    // Calculate the scroll position, accounting for the fixed navbar.
-    const sectionPosition =
-      section.getBoundingClientRect().top + window.scrollY - NAVBAR_OFFSET;
+    // Wait for the browser to update the layout.
+    requestAnimationFrame(() => {
+      const offset = getScrollOffset();
 
-    window.scrollTo({
-      top: Math.max(0, sectionPosition),
-      behavior: "smooth",
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: Math.max(0, sectionPosition),
+        behavior: "smooth",
+      });
     });
   };
 
   // Detect the active section while scrolling.
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + NAVBAR_OFFSET;
+      const activationPoint = window.innerHeight * 0.35;
 
       let currentSection = "home";
 
-      navLinks.forEach((link) => {
-        const section = document.getElementById(link.id);
+      navLinks.forEach(({ id }) => {
+        const section = document.getElementById(id);
 
-        if (
-          section &&
-          section.getBoundingClientRect().top + window.scrollY <= scrollPosition
-        ) {
-          currentSection = link.id;
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= activationPoint) {
+          currentSection = id;
         }
       });
 
-      // Mark Contact active when reaching the bottom of the page.
-      const isAtBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 5;
-
-      if (isAtBottom) {
-        currentSection = "contact";
-      }
-
-      setActiveSection((previous) =>
-        previous === currentSection ? previous : currentSection,
-      );
+      setActiveSection(currentSection);
     };
-
     const animationFrame = requestAnimationFrame(handleScroll);
 
     window.addEventListener("scroll", handleScroll, {
