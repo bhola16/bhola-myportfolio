@@ -8,6 +8,7 @@ export const personalInfo = {
   phone: "+8801934392790",
   profileImage: "/profile/bholanath_bala.jpg",
   resume: "/resume/Bholanath_Bala_CV.pdf",
+  
 
   socialLinks: {
     github: "https://github.com/bhola16",
@@ -182,6 +183,8 @@ export const projects: Project[] = [
     liveLink: "https://fitlogbhola.vercel.app/",
     githubLink: "https://github.com/bhola16/FitLog-Bhola",
   },
+
+
 ];
 
 export const contactInfo = {

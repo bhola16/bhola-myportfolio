@@ -1,3 +1,4 @@
+import Footer from "@/components/myComponents/Footer";
 import Navbar from "@/components/myComponents/Navbar";
 import ThemeProvider from "@/components/myComponents/ThemeProvider";
 import type { Metadata, Viewport } from "next";
@@ -54,6 +55,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

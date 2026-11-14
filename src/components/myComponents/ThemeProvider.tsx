@@ -1,6 +1,6 @@
 "use client";
 
-import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { ThemeProvider as NextThemesProvider } from "@teispace/next-themes";
 import type { ReactNode } from "react";
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
@@ -9,10 +9,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
       attribute="class"
       defaultTheme="system"
       enableSystem
-      disableTransitionOnChange
-      scriptProps={{
-        suppressHydrationWarning: true,
-      }}>
+      disableTransitionOnChange>
       {children}
     </NextThemesProvider>
   );

@@ -1,17 +1,78 @@
+
 "use client";
 
 import { motion } from "framer-motion";
 import {
   BrainCircuit,
   Code2,
-  Database,
+  CodeXml,
+  Eye,
+  FileText,
   Globe,
   Layers3,
+  ShieldCheck,
   Sparkles,
   Terminal,
   Wrench,
 } from "lucide-react";
+import {
+  SiPython,
+  SiJavascript,
+  SiTypescript,
+  SiC,
+  SiCplusplus,
+  SiPytorch,
+  SiTensorflow,
+  SiHuggingface,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+  SiGooglecolab,
+} from "react-icons/si";
+import type { IconType } from "react-icons";
 import { skills } from "@/data/portfolio";
+
+/* Technology Logo Mapping */
+const technologyIcons: Record<
+  string,
+  { icon: IconType; color: string }
+> = {
+  // Programming Languages
+  Python: { icon: SiPython, color: "#3776AB" },
+  JavaScript: { icon: SiJavascript, color: "#F7DF1E" },
+  TypeScript: { icon: SiTypescript, color: "#3178C6" },
+  C: { icon: SiC, color: "#A8B9CC" },
+  "C++": { icon: SiCplusplus, color: "#00599C" },
+
+  // AI & Machine Learning
+  "Machine Learning": { icon: BrainCircuit, color: "#8B5CF6" },
+  "Deep Learning": { icon: Layers3, color: "#8B5CF6" },
+  "Computer Vision": { icon: Eye, color: "#8B5CF6" },
+  PyTorch: { icon: SiPytorch, color: "#EE4C2C" },
+  TensorFlow: { icon: SiTensorflow, color: "#FF6F00" },
+  Transformers: { icon: SiHuggingface, color: "#FFD21E" },
+
+  // Web Development
+  React: { icon: SiReact, color: "#61DAFB" },
+  "Next.js": { icon: SiNextdotjs, color: "#000000" },
+  "Tailwind CSS": { icon: SiTailwindcss, color: "#06B6D4" },
+  "Node.js": { icon: SiNodedotjs, color: "#5FA04E" },
+  "Express.js": { icon: SiExpress, color: "#000000" },
+  MongoDB: { icon: SiMongodb, color: "#47A248" },
+  "Better Auth": { icon: ShieldCheck, color: "#64748B" },
+
+  // Development Tools
+  Git: { icon: SiGit, color: "#F05032" },
+  GitHub: { icon: SiGithub, color: "#181717" },
+  "Google Colab": { icon: SiGooglecolab, color: "#F9AB00" },
+  "VS Code": { icon: CodeXml, color: "#007ACC" },
+  LaTeX: { icon: FileText, color: "#008080" },
+};
 
 const categoryIcons = [Code2, BrainCircuit, Globe, Wrench];
 
@@ -25,7 +86,8 @@ const categoryDescriptions = [
 const categoryColors = [
   {
     icon: "bg-blue-100 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400",
-    border: "group-hover:border-blue-300 dark:group-hover:border-blue-500/40",
+    border:
+      "group-hover:border-blue-300 dark:group-hover:border-blue-500/40",
     glow: "bg-blue-500/10",
     chip: "hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 dark:hover:border-blue-500/40 dark:hover:bg-blue-500/10 dark:hover:text-blue-300",
     accent: "from-blue-500 to-cyan-500",
@@ -40,14 +102,16 @@ const categoryColors = [
   },
   {
     icon: "bg-cyan-100 text-cyan-600 dark:bg-cyan-500/10 dark:text-cyan-400",
-    border: "group-hover:border-cyan-300 dark:group-hover:border-cyan-500/40",
+    border:
+      "group-hover:border-cyan-300 dark:group-hover:border-cyan-500/40",
     glow: "bg-cyan-500/10",
     chip: "hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-700 dark:hover:border-cyan-500/40 dark:hover:bg-cyan-500/10 dark:hover:text-cyan-300",
     accent: "from-cyan-500 to-teal-500",
   },
   {
     icon: "bg-amber-100 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400",
-    border: "group-hover:border-amber-300 dark:group-hover:border-amber-500/40",
+    border:
+      "group-hover:border-amber-300 dark:group-hover:border-amber-500/40",
     glow: "bg-amber-500/10",
     chip: "hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700 dark:hover:border-amber-500/40 dark:hover:bg-amber-500/10 dark:hover:text-amber-300",
     accent: "from-amber-500 to-orange-500",
@@ -79,7 +143,8 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative isolate overflow-hidden bg-white px-4 py-2 pb-10 transition-colors duration-500 dark:bg-[#0b1220] sm:px-6 lg:px-8">
+      className="relative isolate overflow-hidden bg-white px-4 py-2 pb-10 transition-colors duration-500 dark:bg-[#0b1220] sm:px-6 lg:px-8"
+    >
       {/* Background decoration */}
       <motion.div
         animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
@@ -108,7 +173,8 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-12">
+          className="mb-12"
+        >
           <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
             <span className="h-px w-7 bg-blue-500" />
             My Technical Expertise
@@ -136,7 +202,8 @@ const Skills = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid gap-5 md:grid-cols-2">
+          className="grid gap-5 md:grid-cols-2"
+        >
           {skills.map((category, index) => {
             const Icon = categoryIcons[index] || Layers3;
             const color = categoryColors[index % categoryColors.length];
@@ -146,7 +213,8 @@ const Skills = () => {
                 key={category.category}
                 variants={cardVariants}
                 whileHover={{ y: -6 }}
-                className={`group relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/80 p-6 transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:bg-slate-900 dark:hover:shadow-black/20 sm:p-7 ${color.border}`}>
+                className={`group relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/80 p-6 transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:bg-slate-900 dark:hover:shadow-black/20 sm:p-7 ${color.border}`}
+              >
                 {/* Card glow */}
                 <div
                   className={`pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100 ${color.glow}`}
@@ -162,7 +230,8 @@ const Skills = () => {
                           type: "spring",
                           stiffness: 300,
                         }}
-                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${color.icon}`}>
+                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${color.icon}`}
+                      >
                         <Icon size={24} />
                       </motion.div>
 
@@ -178,7 +247,7 @@ const Skills = () => {
                     </div>
 
                     <span className="text-3xl font-black text-slate-200 transition-colors duration-300 group-hover:text-slate-300 dark:text-slate-800 dark:group-hover:text-slate-700">
-                      0{index + 1}
+                      {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
 
@@ -202,26 +271,41 @@ const Skills = () => {
                     />
                   </div>
 
-                  {/* Technology chips */}
+                  {/* Technology chips with logos */}
                   <div className="flex flex-wrap gap-2.5">
-                    {category.items.map((skill, skillIndex) => (
-                      <motion.span
-                        key={skill}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: 0.3,
-                          delay: 0.15 + skillIndex * 0.045,
-                        }}
-                        whileHover={{
-                          y: -4,
-                          scale: 1.06,
-                        }}
-                        className={`cursor-default rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-colors duration-300 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-300 ${color.chip}`}>
-                        {skill}
-                      </motion.span>
-                    ))}
+                    {category.items.map((skill, skillIndex) => {
+                      const technology = technologyIcons[skill];
+                      const TechnologyIcon = technology?.icon || Code2;
+
+                      return (
+                        <motion.span
+                          key={skill}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            duration: 0.3,
+                            delay: 0.15 + skillIndex * 0.045,
+                          }}
+                          whileHover={{
+                            y: -4,
+                            scale: 1.06,
+                          }}
+                          title={skill}
+                          className={`inline-flex cursor-default items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-all duration-300 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-300 ${color.chip}`}
+                        >
+                          <TechnologyIcon
+                            size={16}
+                            style={{
+                              color: technology?.color || "currentColor",
+                            }}
+                            className="shrink-0"
+                          />
+
+                          <span>{skill}</span>
+                        </motion.span>
+                      );
+                    })}
                   </div>
                 </div>
               </motion.div>
@@ -235,7 +319,8 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-10 flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-slate-300 bg-slate-50/70 px-5 py-6 text-center dark:border-slate-700 dark:bg-slate-900/30 sm:flex-row sm:text-left">
+          className="mt-10 flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-slate-300 bg-slate-50/70 px-5 py-6 text-center dark:border-slate-700 dark:bg-slate-900/30 sm:flex-row sm:text-left"
+        >
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400">
             <Terminal size={20} />
           </div>

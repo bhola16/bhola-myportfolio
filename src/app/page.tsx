@@ -1,7 +1,6 @@
 import About from "@/components/myComponents/About";
 import Contact from "@/components/myComponents/Contact";
 import Education from "@/components/myComponents/Education";
-import Footer from "@/components/myComponents/Footer";
 import Hero from "@/components/myComponents/Hero";
 import Projects from "@/components/myComponents/Projects";
 import Publications from "@/components/myComponents/Publications";
@@ -19,7 +18,7 @@ export default function Home() {
         <Projects/>
         <Contact/>
       </main>
-      <Footer/>
+      
     </div>
   );
 }
