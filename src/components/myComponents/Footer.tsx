@@ -9,9 +9,9 @@ import {
   MapPin,
   MessageCircle,
 } from "lucide-react";
-import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { personalInfo } from "@/data/portfolio";
 
@@ -52,7 +52,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-slate-200 bg-slate-50 py-8 dark:border-slate-800 dark:bg-[#080e1a] sm:py-10">
+    <footer className="relative overflow-hidden border-t border-slate-200  py-8 dark:border-slate-800 dark:bg-[#080e1a] sm:py-10">
       {/* Background Decoration */}
       <div className="pointer-events-none absolute -bottom-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/10 blur-[100px]" />
 
