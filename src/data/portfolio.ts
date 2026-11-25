@@ -119,6 +119,30 @@ export const publications = [
 
 export const projects: Project[] = [
   {
+    slug: "pizzahub",
+    title: "PizzaHub",
+    category: "Full-Stack Web Development",
+
+    challenges: [
+      "Implementing role-based access for customers, vendors, and administrators",
+      "Integrating Better Auth and JWT-based authentication with protected APIs",
+      "Managing menu items, customer orders, and vendor operations",
+      "Integrating Stripe Checkout and webhook-based subscription management",
+      "Connecting MongoDB with the frontend and backend for reliable data management",
+    ],
+
+    futureImprovements: [
+      "Implement real-time order tracking and status notifications",
+      "Add customer reviews and ratings for menu items",
+      "Introduce sales analytics and reporting for vendors",
+      "Improve order management with advanced filtering and search",
+      "Add email notifications for order and subscription updates",
+    ],
+
+    liveLink: "https://pizzshub-client.vercel.app",
+    githubLink: "https://github.com/bhola16/pizzahub-client",
+  },
+  {
     slug: "together-we-can",
     title: "TogetherWeCan",
     category: "Full-Stack Web Development",
@@ -183,8 +207,6 @@ export const projects: Project[] = [
     liveLink: "https://fitlogbhola.vercel.app/",
     githubLink: "https://github.com/bhola16/FitLog-Bhola",
   },
-
-
 ];
 
 export const contactInfo = {
