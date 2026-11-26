@@ -181,7 +181,7 @@ export default function Hero() {
               className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:from-blue-700 hover:to-indigo-700 hover:shadow-xl hover:shadow-blue-600/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
               <Download
                 size={17}
-                className="transition-transform duration-300 group-hover:translate-y-1"
+                className="transition-transform duration-300 group-hover:-translate-y-1"
               />
               Download CV
             </Link>
