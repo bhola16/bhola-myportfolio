@@ -6,9 +6,8 @@ export const personalInfo = {
   location: "Khulna, Bangladesh",
   email: "ku.bhola16@gmail.com",
   phone: "+8801934392790",
-  profileImage: "/profile/bholanath_Bala.jpg",
+  profileImage: "/profile/Bholanath_Bala.jpg",
   resume: "/resume/Bholanath_Bala_Resume.pdf",
-  
 
   socialLinks: {
     github: "https://github.com/bhola16",

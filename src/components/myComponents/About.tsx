@@ -82,7 +82,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative isolate overflow-hidden bg-slate-50 pb-10 px-4 py-2 transition-colors duration-500 dark:bg-[#0b1220] sm:px-6 lg:px-8">
+      className="relative isolate overflow-hidden bg-slate-50 pb-10 px-4 py-8 transition-colors duration-500 dark:bg-[#0b1220] sm:px-6 lg:px-8">
       {/* Animated background accents */}
       <motion.div
         animate={{
@@ -274,7 +274,7 @@ const About = () => {
         </div>
 
         {/* Learning journey */}
-        <div className="mt-16">
+        <div className="mt-8">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -344,7 +344,7 @@ const About = () => {
         </div>
 
         {/* What I enjoy */}
-        <div className="mt-16">
+        <div className="mt-8">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
