@@ -7,7 +7,7 @@ export const personalInfo = {
   email: "ku.bhola16@gmail.com",
   phone: "+8801934392790",
   profileImage: "/profile/bholanath_bala.jpg",
-  resume: "/resume/Bholanath_Bala_resume.pdf",
+  resume: "/resume/Bholanath_Bala_Resume.pdf",
   
 
   socialLinks: {
