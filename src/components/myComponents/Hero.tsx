@@ -304,7 +304,7 @@ export default function Hero() {
                 href={personalInfo.resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                download="Bholanath_Bala_CV.pdf"
+                download="Bholanath_Bala_Resume.pdf"
                 className="group flex items-center gap-2 rounded-xl border border-white/80 bg-white/95 p-2 pr-3 shadow-xl shadow-blue-950/15 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-blue-500/20 sm:gap-2.5 sm:rounded-2xl sm:p-2.5 sm:pr-4 dark:border-slate-700 dark:bg-slate-900/95">
                 {/* Download Icon */}
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white shadow-md shadow-blue-600/25 transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-105 sm:h-10 sm:w-10 sm:rounded-xl">
