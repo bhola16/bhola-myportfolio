@@ -249,7 +249,7 @@ export default function Hero() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border-[5px] border-white bg-slate-200 shadow-2xl shadow-blue-950/15 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/40">
               <Image
                 src={personalInfo.profileImage}
-                alt="Portrait of Bholanath Bala"
+                alt="Bholanath Bala"
                 fill
                 priority
                 sizes="(max-width: 640px) 85vw, (max-width: 1024px) 390px, 420px"

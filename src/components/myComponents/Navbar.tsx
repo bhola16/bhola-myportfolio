@@ -5,6 +5,8 @@ import { useTheme } from "@teispace/next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { personalInfo } from "@/data/portfolio";
+
 import {
   useEffect,
   useState,
@@ -159,7 +161,7 @@ export default function Navbar() {
           aria-label="Bholanath Bala - Home">
           <span className="relative shrink-0">
             <Image
-              src="/profile/bholanath_bala.jpg"
+              src={personalInfo.profileImage}
               alt="Bholanath Bala"
               width={42}
               height={42}

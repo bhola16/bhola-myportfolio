@@ -74,7 +74,7 @@ export default function Footer() {
             >
               <span className="relative shrink-0">
                 <Image
-                  src="/profile/bholanath_bala.jpg"
+                  src={personalInfo.profileImage}
                   alt="Bholanath Bala"
                   width={48}
                   height={48}
